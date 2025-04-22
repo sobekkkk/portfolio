@@ -19,7 +19,7 @@ export default defineConfig({
         mdx(),
         sitemap(),
         spectre({
-            name: 'Spectre',
+            name: 'Hey',
             openGraph: {
                 home: {
                     title: 'Spectre',
