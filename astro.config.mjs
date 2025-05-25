@@ -1,5 +1,4 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
 import sitemap from '@astrojs/sitemap';
@@ -7,21 +6,18 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     output: 'static',
     trailingSlash: 'always',
-    site: 'https://sobekkkk.github.io/portfolio',
-
+    site: 'https://sobekkkk.github.io/portfolio/',
+    base: '/portfolio/', // ← Ajoutez cette ligne
     image: {
         service: passthroughImageService()
     },
-
     // Single page, no prefetch needed
     prefetch: false,
-
     markdown: {
         shikiConfig: {
             theme: 'catppuccin-mocha'
         }
     },
-
     integrations: [
         tailwind(),
         sitemap(),
