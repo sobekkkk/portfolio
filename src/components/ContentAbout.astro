@@ -1,0 +1,129 @@
+---
+import { Code } from 'astro:components';
+
+const code = `interface Developer {
+    name: string;
+    skills: string[];
+    interests: string[];
+    education: Education;
+};
+
+interface TechStack {
+     devOps: string[];
+    backend: string[];
+    frontend: string[];
+};
+
+interface Education {
+    degree: string;
+    school: string;
+    company: string;
+    location: string;
+}
+
+type ContactType = 'github' | 'linkedIn' | 'email';
+
+const techStack: TechStack = {
+    devOps: [
+        'GitHub',
+        'Docker',
+        'CI/CD'
+    ],
+    frontend: [
+        'Python'
+        'VueJs \ Nuxt3',
+        'JavaScript',
+        'Responsive Design'
+    ],
+    backend: [
+        'Node.js',
+        'PHP',
+        'MySQL',
+        'PostgreSQL',
+        'API RESTful',
+        'Python'
+    ]
+};
+
+const me: Developer = {
+    name: 'Votre Nom',
+    skills: [
+        ...techStack.devOps,
+        ...techStack.backend,
+        ...techStack.frontend,
+        'Lua/Roblox',
+        'Analyse de Vulnérabilités',
+        'Tests d\'Intrusion',
+        'Sécurité Informatique'
+    ],
+    interests: [
+        'Open Source',
+        'Cybersécurité',
+        'Programmation Système',
+        'Automatisation',
+        'Rétro-ingénierie'
+    ],
+    education: {
+        degree: 'BTS SIO (Services Informatiques aux Organisations)',
+        school: 'ESNA',
+        company: 'Coreff',
+        location: 'Rennes'
+    }
+};
+
+const contact = (type: ContactType): string => {
+    switch (type) {
+        case 'github':
+            return 'https://github.com/sobekkkk';
+        case 'linkedIn':
+            return 'hhttps://www.linkedin.com/in/jules-c-5b4576272/';
+        case 'email':
+            return 'jules.calloch@proton.me';
+        default:
+            return 'Envoyez-moi un fax.';
+    }
+};
+
+const displayEducation = (): string => {
+    return \`
+    Formation: \${me.education.degree}
+    École: \${me.education.school}
+    Entreprise: \${me.education.company}
+    Localisation: \${me.education.location}
+    Diplôme précédent: Baccalauréat général, spécialités Maths et NSI
+    \`;
+};
+
+`;
+---
+
+<Code
+    code={code}
+    lang="js"
+    wrap={true}
+/>
+
+<style is:global>
+
+    /* Custom styling for code block line numbers */
+    pre.astro-code {
+        @apply bg-transparent !important;
+    }
+
+    pre.astro-code code {
+        @apply block;
+        counter-reset: step;
+        counter-increment: step 0;
+    }
+
+    pre.astro-code code .line {
+        @apply relative;
+    }
+
+    pre.astro-code code .line::before {
+        content: counter(step);
+        counter-increment: step;
+        @apply text-gray-600 pr-2;
+    }
+
+</style>

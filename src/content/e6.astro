@@ -1,0 +1,62 @@
+---
+import { build } from 'astro';
+import ContentProjects from '../components/ContentProjects.astro';
+
+const projects = [
+    {
+        name: "Site de gestion d'une bibliothèque",
+        description: "Site de gestion d'une bibliothèque avec un système de gestion de prêts et de résarvation de salles d'étude.",
+        link: {
+            url: "https://github.com/projet-bts-bibliotheque",
+            title: "GitHub",
+            buttonLabel: "GitHub de l'organization."
+        }
+    },
+    {
+        name: "Développement d'un erp",
+        description: "Developpement de l'erp maison au sein de mon entreprise. Ce projet a pour but de remplacer les anciens logiciels sur étagères utilisés précédemment.",
+        link: { 
+            url: "",
+            title: "ERP",
+            buttonLabel: "Pas de lien"
+        }
+    },
+    {
+        name: "réalisation d’un site web statique a visée informatif",
+        description: "En début de formation, j'ai developpé ce site dans le cadre de cours sur HTML/CSS ",
+        link: {
+            url: "https://github.com/sobekkkk/web-insect",
+            title: "GitHub",
+            buttonLabel: "GitHub du projet"
+        }
+    },
+    {
+        name: "Installation et prise en main de GLPI",
+        description: "Dans le cadre de la formation, j'ai pu installer, découvrir et prendre en main l'outil GLPI",
+     
+    },
+    {
+        name: "Installation et découverte d'un Active Directory",
+        description: "J'ai eu l'occasion d'installer et faire mes premiers pas sur GLPI",
+      
+    },
+    {
+        name:"Developpement de tests automatisés end-to-end pour notre ERP",
+        description:"Durant mes périodes entreprises, j'ai pu découvrir et développer des tests automatisés end-to-end avec playwright pour tester le front-end."
+    },
+    {
+        name:"Projet de monitoring de la quasi-totalité de l’infrastructure",
+        description:"Au sein de mon entreprise, on m'a confié le projet de monitoring, cela ma permis faire mes premiers pas avec l'infrastructure de l'entreprise."
+    }
+]
+---
+
+<section>
+  <h1>Projets</h1>
+
+  <br />
+  <hr />
+  <br />
+
+  <ContentProjects projects={projects} />
+</section>
