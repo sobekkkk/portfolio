@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     output: 'static',
     trailingSlash: 'always',
-    site: 'https://sobekkkk.github.io/portfolio/',
+    site: 'https://sobekkkk.github.io/portfolio',
 
     image: {
         service: passthroughImageService()
