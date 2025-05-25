@@ -7,10 +7,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     output: 'static',
     trailingSlash: 'always',
-    site: 'https://malo.beaugendre.org',
+    site: 'https://sobekkkk.github.io/portfolio/',
 
     image: {
-        service: passthroughImageService(),
+        service: passthroughImageService()
     },
 
     // Single page, no prefetch needed
@@ -30,7 +30,7 @@ export default defineConfig({
             SVG: false,
             Image: false,
             HTML: {
-                "html-minifier-terser": {
+                'html-minifier-terser': {
                     collapseWhitespace: true,
                     // collapseInlineTagWhitespace: true, // It breaks display-inline / flex-inline text
                     minifyCSS: true,
@@ -39,13 +39,13 @@ export default defineConfig({
                     removeEmptyAttributes: true,
                     // removeEmptyElements: true, // It removes sometimes SVGs
                     removeRedundantAttributes: true
-                },
+                }
             },
             JavaScript: {
-                'terser': {
+                terser: {
                     compress: {
                         drop_console: true,
-                        drop_debugger: true,
+                        drop_debugger: true
                     }
                 }
             }
